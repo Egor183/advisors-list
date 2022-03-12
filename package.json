@@ -1,0 +1,14 @@
+{
+  "name": "advisors-list",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Egor Klimenok <egor.klimenok98@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.ts"
+  },
+  "dependencies": {
+    "config": "^3.3.7",
+    "express": "^4.17.3"
+  }
+}
