@@ -1,7 +1,8 @@
 import React from "react";
+import AdvisorsList from "./pages/AdvisorsList";
 
 function App() {
-  return <div className="App">Hello!</div>;
+  return <AdvisorsList />;
 }
 
 export default App;

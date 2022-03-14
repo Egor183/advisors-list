@@ -1,0 +1,16 @@
+.mainContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  max-width: 1024px;
+  margin: auto;
+  background-color: rgb(247, 241, 241);
+}
+
+.filterContainer {
+  padding: 16px;
+  border-right: 1px solid #1976d2;
+}
+
+.contentContainer {
+  padding: 16px;
+}
