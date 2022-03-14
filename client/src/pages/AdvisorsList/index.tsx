@@ -7,7 +7,7 @@ function AdvisorsList() {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.filterContainer}>
-        <Filter />
+        <Filter onSubmit={(e: any) => console.log(e)} />
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.container}>2</div>

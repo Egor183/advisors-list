@@ -1,5 +1,11 @@
 export type CheckBoxType = {
-  checked: boolean;
   label: string;
-  onChange: () => void;
+  name: string;
+  input: any;
+};
+
+export type CheckBoxGroupType = {
+  children: any;
+  label: string;
+  id: string;
 };
