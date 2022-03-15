@@ -4,4 +4,5 @@ export type SelectType = {
   children: ReactNode;
   label: string;
   id: string;
+  labelId: string;
 };

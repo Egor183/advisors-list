@@ -7,12 +7,9 @@ function AdvisorsList() {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.filterContainer}>
-        <Filter onSubmit={(e: any) => console.log(e)} />
+        <Filter />
       </div>
-      <div className={styles.contentContainer}>
-        <div className={styles.container}>2</div>
-        <div className={styles.container}>3</div>
-      </div>
+      <div className={styles.contentContainer}>1</div>
     </div>
   );
 }

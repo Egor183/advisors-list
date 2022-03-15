@@ -1,6 +1,6 @@
 .mainContainer {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 0.5fr 2fr;
   max-width: 1024px;
   margin: auto;
   background-color: rgb(247, 241, 241);

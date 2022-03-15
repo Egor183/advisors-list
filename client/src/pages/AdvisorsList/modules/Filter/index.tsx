@@ -1,61 +1,24 @@
-import React from "react";
-import { Field, InjectedFormProps, reduxForm } from "redux-form";
-import CheckBoxGroup from "../../../../components/CheckBoxGroup";
-import CheckBox from "../../../../components/CheckBoxGroup/modules/CheckBox";
-import RadioGroup from "../../../../components/RadioGroup";
-import RadioButton from "../../../../components/RadioGroup/modules/RadioButton";
+import { MenuItem } from "@mui/material";
+import React, { memo } from "react";
+import Select from "../../../../components/Select";
+import FilterForm from "./modules/FilterForm";
 
-const Filter: React.FC<InjectedFormProps> = ({ handleSubmit }) => {
+import styles from "./styles.module.css";
+
+const Filter = () => {
   return (
-    <form onSubmit={handleSubmit}>
+    <div className={styles.mainContainer}>
       <div>
-        <Field
-          name="status"
-          component={RadioGroup}
-          type="radio"
-          label="Status"
-          id="1"
-        >
-          <RadioButton value="both" label="Both" />
-          <RadioButton value="online" label="Online" />
-          <RadioButton value="offline" label="Offline" />
-        </Field>
+        <Select label="Sort by" labelId="3" id="3">
+          <MenuItem value="moreViews">more views</MenuItem>
+          <MenuItem value="fewerViews">fewer views</MenuItem>
+        </Select>
       </div>
-
-      <div>
-        <CheckBoxGroup label="Languages" id="2">
-          <Field
-            name="english"
-            component={CheckBox}
-            type="checkbox"
-            label="English"
-          />
-          <Field
-            name="spanish"
-            component={CheckBox}
-            type="checkbox"
-            label="Spanish"
-          />
-          <Field
-            name="france"
-            component={CheckBox}
-            type="checkbox"
-            label="France"
-          />
-          <Field
-            name="german"
-            component={CheckBox}
-            type="checkbox"
-            label="German"
-          />
-        </CheckBoxGroup>
+      <div className={styles.filterFormContainer}>
+        <FilterForm onSubmit={(e: any) => console.log(e)} />
       </div>
-
-      <button type="submit">Submit</button>
-    </form>
+    </div>
   );
 };
 
-export default reduxForm({
-  form: "Filter",
-})(Filter);
+export default memo(Filter);
