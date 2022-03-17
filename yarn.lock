@@ -2,19 +2,10 @@
 # yarn lockfile v1
 
 
-"@babel/runtime@^7.17.2":
-  version "7.17.7"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.7.tgz#a5f3328dc41ff39d803f311cfe17703418cf9825"
-  integrity sha512-L6rvG9GDxaLgFjg41K+5Yv9OMrU98sWe+Ykmc6FDJW/+vYZMhdOMKkISgzptMaERHvS2Y2lw9MDRm2gHhlQQoA==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
-"@mui/icons-material@^5.5.1":
-  version "5.5.1"
-  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.5.1.tgz#848a57972617411370775980cbc6990588d4aafb"
-  integrity sha512-40f68p5+Yhq3dCn3QYHqQt5RETPyR3AkDw+fma8PtcjqvZ+d+jF84kFmT6NqwA3he7TlwluEtkyAmPzUE4uPdA==
-  dependencies:
-    "@babel/runtime" "^7.17.2"
+"@faker-js/faker@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-6.0.0.tgz#b613ebf5f5ebb2ab987afb567d8b7fe860199c13"
+  integrity sha512-10zLCKhp3YEmBuko71ivcMoIZcCLXgQVck6aNswX+AWwaek/L8S3yz9i8m3tHigRkcF6F2vI+qtdtyySHK+bGA==
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -1016,11 +1007,6 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
-
-regenerator-runtime@^0.13.4:
-  version "0.13.9"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
-  integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
 
 registry-auth-token@^4.0.0:
   version "4.2.1"
