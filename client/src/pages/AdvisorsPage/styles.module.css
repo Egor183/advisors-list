@@ -4,13 +4,13 @@
   max-width: 1024px;
   margin: auto;
   background-color: rgb(247, 241, 241);
+  height: 100vh;
 }
 
 .filterContainer {
-  padding: 16px;
   border-right: 1px solid #1976d2;
 }
 
-.contentContainer {
+.container {
   padding: 16px;
 }

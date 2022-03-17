@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 
 const Filter = () => {
   return (
-    <div className={styles.mainContainer}>
+    <div>
       <div>
         <Select label="Sort by" labelId="3" id="3">
           <MenuItem value="moreViews">more views</MenuItem>

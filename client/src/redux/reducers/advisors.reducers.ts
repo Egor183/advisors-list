@@ -1,5 +1,5 @@
 import { GetAdvisorsActionType } from "./../../types/redux.types";
-import { LOAD_ADVISORS } from "./../types/advisors.types";
+import { LOAD_ADVISORS } from "../action-types/advisors.action-types";
 const initialState = {
   advisors: [],
 };

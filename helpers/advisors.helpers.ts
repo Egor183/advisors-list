@@ -13,6 +13,7 @@ export const generateAdvisorsData = () => {
       reviews: faker.random.number(ADVISORS_DATA.REVIEWS),
       status: faker.random.arrayElement(ADVISORS_DATA.STATUSES),
       languages: faker.random.arrayElements(ADVISORS_DATA.LANGUAGES),
+      image: faker.image.avatar(),
       id: faker.datatype.uuid(),
     });
   }

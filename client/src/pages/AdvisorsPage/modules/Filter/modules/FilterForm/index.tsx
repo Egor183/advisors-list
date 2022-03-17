@@ -28,25 +28,25 @@ const FilterForm: React.FC<InjectedFormProps> = ({ handleSubmit }) => {
       <div className={styles.checkBoxContainer}>
         <CheckBoxGroup label="Languages" id="2">
           <Field
-            name="english"
+            name="English"
             component={CheckBox}
             type="checkbox"
             label="English"
           />
           <Field
-            name="spanish"
+            name="Spanish"
             component={CheckBox}
             type="checkbox"
             label="Spanish"
           />
           <Field
-            name="france"
+            name="France"
             component={CheckBox}
             type="checkbox"
             label="France"
           />
           <Field
-            name="german"
+            name="German"
             component={CheckBox}
             type="checkbox"
             label="German"
