@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import Select from "@mui/material/Select";
 import { useCallback } from "react";
 import { SelectType } from "../../types/select.types";
@@ -9,13 +9,29 @@ const SelectComponent: React.FC<SelectType> = ({
   children,
   id,
   labelId,
+  onChange,
 }) => {
-  const handleChange = useCallback((event) => event.target.value, []);
+  const [value, setValue] = useState("");
+
+  const handleChange = useCallback(
+    (event) => {
+      const currentValue = event.target.value;
+      setValue(currentValue);
+      onChange(currentValue);
+    },
+    [onChange]
+  );
 
   return (
     <FormControl fullWidth>
       <InputLabel id={labelId}>{label}</InputLabel>
-      <Select labelId={labelId} id={id} label={label} onChange={handleChange}>
+      <Select
+        labelId={labelId}
+        id={id}
+        label={label}
+        onChange={handleChange}
+        value={value}
+      >
         {children}
       </Select>
     </FormControl>

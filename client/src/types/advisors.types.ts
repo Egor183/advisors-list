@@ -8,3 +8,8 @@ export type AdvisorDataType = {
 };
 
 export type AdvisorsListType = AdvisorDataType[];
+
+export type ChangeAdvisorsListFunctionType = (
+  advisorsList: AdvisorsListType,
+  changingValue: string
+) => AdvisorsListType;

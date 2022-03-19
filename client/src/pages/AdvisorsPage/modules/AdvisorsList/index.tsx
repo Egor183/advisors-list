@@ -13,10 +13,8 @@ const AdvisorsList = () => {
   const dispatch = useDispatch();
 
   const advisors = useSelector(
-    (state: RootStateOrAny) => state.advisors.advisors
+    (state: RootStateOrAny) => state.advisors.currentAdvisorsList
   );
-
-  console.log(advisors);
 
   useEffect(() => {
     (async () => {
@@ -27,7 +25,7 @@ const AdvisorsList = () => {
         //
       }
     })();
-  }, []);
+  }, [dispatch, request]);
 
   return (
     <div className={styles.container}>

@@ -5,4 +5,5 @@ export type SelectType = {
   label: string;
   id: string;
   labelId: string;
+  onChange: (changingValue: string) => void;
 };

@@ -1,7 +1,12 @@
 import { GetAdvisorsActionType } from "./../../types/redux.types";
-import { LOAD_ADVISORS } from "../action-types/advisors.action-types";
+import {
+  CHANGE_CURRENT_ADVISORS_LIST,
+  LOAD_ADVISORS,
+} from "../action-types/advisors.action-types";
+
 const initialState = {
-  advisors: [],
+  advisorsList: [],
+  currentAdvisorsList: [],
 };
 
 export const advisorsReducer = (
@@ -10,7 +15,17 @@ export const advisorsReducer = (
 ) => {
   switch (action.type) {
     case LOAD_ADVISORS:
-      return { ...state, advisors: action.payload };
+      return {
+        ...state,
+        advisorsList: action.payload,
+        currentAdvisorsList: action.payload,
+      };
+
+    case CHANGE_CURRENT_ADVISORS_LIST:
+      return {
+        ...state,
+        currentAdvisorsList: action.payload,
+      };
 
     default:
       return state;
