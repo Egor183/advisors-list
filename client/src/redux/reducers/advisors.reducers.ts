@@ -3,8 +3,12 @@ import {
   CHANGE_CURRENT_ADVISORS_LIST,
   LOAD_ADVISORS,
 } from "../action-types/advisors.action-types";
+import { AdvisorsListType } from "types/advisors.types";
 
-const initialState = {
+const initialState: {
+  advisorsList: AdvisorsListType | never[];
+  currentAdvisorsList: AdvisorsListType | never[];
+} = {
   advisorsList: [],
   currentAdvisorsList: [],
 };
