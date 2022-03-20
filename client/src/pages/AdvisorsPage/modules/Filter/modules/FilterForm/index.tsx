@@ -2,12 +2,14 @@ import { Button, Radio } from "@mui/material";
 import FilterAltRoundedIcon from "@mui/icons-material/FilterAltRounded";
 import React from "react";
 import { Field, FormSection, InjectedFormProps, reduxForm } from "redux-form";
+import { CHECKBOX_ITEMS, RADIO_BUTTON_ITEMS } from "./constants/constants";
 import RadioGroup from "../../../../../../components/RadioGroup";
 import RadioButton from "../../../../../../components/RadioGroup/modules/RadioButton";
 import CheckBoxGroup from "../../../../../../components/CheckBoxGroup";
 import CheckBox from "../../../../../../components/CheckBoxGroup/modules/CheckBox";
 
 import styles from "./styles.module.css";
+import { FORMS_IDS } from "../../../../../../constants/forms.constants";
 
 const FilterForm: React.FC<InjectedFormProps> = ({ handleSubmit }) => {
   return (
@@ -18,41 +20,32 @@ const FilterForm: React.FC<InjectedFormProps> = ({ handleSubmit }) => {
           component={RadioGroup}
           type="radio"
           label="Status"
-          id="1"
+          id={FORMS_IDS.ID_0}
           value="both"
         >
-          <RadioButton value="both" label="Both" control={<Radio />} />
-          <RadioButton value="online" label="Online" control={<Radio />} />
-          <RadioButton value="offline" label="Offline" control={<Radio />} />
+          {RADIO_BUTTON_ITEMS.map((item) => (
+            <RadioButton
+              value={item.value}
+              label={item.label}
+              key={item.key}
+              control={<Radio />}
+            />
+          ))}
         </Field>
       </div>
+
       <div className={styles.checkBoxContainer}>
         <FormSection name="languages">
-          <CheckBoxGroup label="Languages" id="2">
-            <Field
-              name="English"
-              component={CheckBox}
-              type="checkbox"
-              label="English"
-            />
-            <Field
-              name="Spanish"
-              component={CheckBox}
-              type="checkbox"
-              label="Spanish"
-            />
-            <Field
-              name="France"
-              component={CheckBox}
-              type="checkbox"
-              label="France"
-            />
-            <Field
-              name="German"
-              component={CheckBox}
-              type="checkbox"
-              label="German"
-            />
+          <CheckBoxGroup label="Languages" id={FORMS_IDS.ID_1}>
+            {CHECKBOX_ITEMS.map((item) => (
+              <Field
+                name={item.language}
+                component={CheckBox}
+                type="checkbox"
+                label={item.language}
+                key={item.key}
+              />
+            ))}
           </CheckBoxGroup>
         </FormSection>
       </div>

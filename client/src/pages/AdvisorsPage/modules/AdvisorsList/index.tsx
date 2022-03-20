@@ -1,5 +1,6 @@
-import React, { memo, useCallback, useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
+import { API_ROUTES } from "../../../../constants/api.constants";
 import { useRequest } from "../../../../hooks/useRequest.hook";
 import { loadAdvisors } from "../../../../redux/actions/advisors.actions";
 import { AdvisorDataType } from "../../../../types/advisors.types";
@@ -19,7 +20,7 @@ const AdvisorsList = () => {
   useEffect(() => {
     (async () => {
       try {
-        const data = await request("/api/advisors");
+        const data = await request(API_ROUTES.ADVISORS);
         dispatch(loadAdvisors(data));
       } catch (e) {
         //
