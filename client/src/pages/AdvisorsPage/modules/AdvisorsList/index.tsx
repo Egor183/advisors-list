@@ -1,47 +1,37 @@
-import React, { memo, useEffect } from "react";
-import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
-import { API_ROUTES } from "../../../../constants/api.constants";
-import { useRequest } from "../../../../hooks/useRequest.hook";
-import { loadAdvisors } from "../../../../redux/actions/advisors.actions";
-import { AdvisorDataType } from "../../../../types/advisors.types";
+import React, { memo } from "react";
 import Advisor from "./modules/Advisor";
 import logo from "src/assets/loader.gif";
+import { useLoadAdvisors } from "./hooks/useLoadAdvisors.hook";
+import { useHandleScroll } from "./hooks/useHandleScroll.hook";
+import { AdvisorDataType } from "../../../../types/advisors.types";
 
 import styles from "./styles.module.css";
 
 const AdvisorsList = () => {
-  const { request } = useRequest();
-  const dispatch = useDispatch();
-  const advisors = useSelector(
-    (state: RootStateOrAny) => state.advisors.currentAdvisorsList
+  const { advisors, isLoading, handleLoadAdvisors } = useLoadAdvisors();
+  const { handleScroll, listInnerRef } = useHandleScroll(
+    advisors,
+    handleLoadAdvisors
   );
-  const isLoading = useSelector(
-    (state: RootStateOrAny) => state.loading.isLoading
-  );
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const data = await request(API_ROUTES.ADVISORS);
-        dispatch(loadAdvisors(data));
-      } catch (e) {
-        //
-      }
-    })();
-  }, [dispatch, request]);
 
   return (
-    <div className={styles.container}>
-      {isLoading ? (
+    <>
+      {!isLoading ? (
+        <div
+          className={styles.container}
+          onScroll={handleScroll}
+          ref={listInnerRef}
+        >
+          {advisors.map((item: AdvisorDataType) => (
+            <Advisor {...item} key={item.id} />
+          ))}
+        </div>
+      ) : (
         <div className={styles.loaderContainer}>
           <img src={logo} className={styles.loader} />
         </div>
-      ) : (
-        advisors.map((item: AdvisorDataType) => (
-          <Advisor {...item} key={item.id} />
-        ))
       )}
-    </div>
+    </>
   );
 };
 

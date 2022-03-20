@@ -21,7 +21,7 @@ const Filter = () => {
     useChangeCurrentAdvisorsList(handleFilterForm);
 
   return (
-    <div className={isLoading && styles.disabledContent}>
+    <div className={isLoading ? styles.disabledContent : undefined}>
       <div>
         <SelectStatus onChange={handleSelectCurrentAdvisorsList} />
       </div>

@@ -18,6 +18,8 @@ export const handleFilterForm = (
       return true;
     } else if (isStatusBoth && isLanguageChecked) {
       return hasDesiredLanguage;
+    } else if (!isLanguageChecked) {
+      return item.status === status;
     } else {
       return item.status === status && hasDesiredLanguage;
     }

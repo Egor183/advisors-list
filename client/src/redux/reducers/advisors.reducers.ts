@@ -17,8 +17,8 @@ export const advisorsReducer = (
     case LOAD_ADVISORS:
       return {
         ...state,
-        advisorsList: action.payload,
-        currentAdvisorsList: action.payload,
+        advisorsList: [...state.advisorsList, ...action.payload],
+        currentAdvisorsList: [...state.currentAdvisorsList, ...action.payload],
       };
 
     case CHANGE_CURRENT_ADVISORS_LIST:
