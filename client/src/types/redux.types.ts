@@ -6,3 +6,5 @@ type BasicActionType<T> = {
 export type GetAdvisorsActionType = BasicActionType<string[]>;
 
 export type SetLoadingActionType = BasicActionType<boolean>;
+
+export type ResetScrollActionType = BasicActionType<boolean>;

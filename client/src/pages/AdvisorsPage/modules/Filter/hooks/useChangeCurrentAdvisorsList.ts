@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { resetScroll } from "../../../../../redux/actions/scroll.actions";
 import { changeCurrentAdvisorsList } from "../../../../../redux/actions/advisors.actions";
 import { ChangeAdvisorsListFunctionType } from "../../../../../types/advisors.types";
 
@@ -27,6 +28,7 @@ export const useChangeCurrentAdvisorsList = (
       }
 
       dispatch(changeCurrentAdvisorsList(callback(currentList, changingValue)));
+      dispatch(resetScroll(true));
     },
     [currentList, callback, dispatch]
   );
