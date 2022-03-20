@@ -1,31 +1,35 @@
 import { API_METHODS } from "../constants/api.constants";
 import { useState, useCallback } from "react";
+import { useDispatch } from "react-redux";
+import { setLoading } from "../redux/actions/loading.actions";
 
 export const useRequest = () => {
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const dispatch = useDispatch();
 
-  const request = useCallback(async (url, method = API_METHODS.GET) => {
-    setLoading(true);
-    try {
-      const response = await fetch(url, { method });
-      const data = await response.json();
+  const request = useCallback(
+    async (url, method = API_METHODS.GET) => {
+      dispatch(setLoading(true));
+      try {
+        const response = await fetch(url, { method });
+        const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.message || "Something went wrong");
+        if (!response.ok) {
+          throw new Error(data.message || "Something went wrong");
+        }
+
+        return data;
+      } catch (e: any) {
+        setError(e.message);
+        throw e;
+      } finally {
+        dispatch(setLoading(false));
       }
-
-      setLoading(false);
-
-      return data;
-    } catch (e: any) {
-      setLoading(false);
-      setError(e.message);
-      throw e;
-    }
-  }, []);
+    },
+    [dispatch]
+  );
 
   const clearError = useCallback(() => setError(null), []);
 
-  return { loading, request, error, clearError };
+  return { request, error, clearError };
 };

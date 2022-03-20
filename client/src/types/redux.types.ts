@@ -4,3 +4,5 @@ type BasicActionType<T> = {
 };
 
 export type GetAdvisorsActionType = BasicActionType<string[]>;
+
+export type SetLoadingActionType = BasicActionType<boolean>;

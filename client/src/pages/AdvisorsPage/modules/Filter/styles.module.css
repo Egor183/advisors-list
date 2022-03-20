@@ -1,3 +1,8 @@
 .filterFormContainer {
   margin-top: 40px;
 }
+
+.disabledContent {
+  pointer-events: none;
+  opacity: 0.5;
+}
