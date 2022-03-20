@@ -1,9 +1,8 @@
 import React, { memo } from "react";
 import { useChangeCurrentAdvisorsList } from "./hooks/useChangeCurrentAdvisorsList";
 import FilterForm from "./modules/FilterForm";
-import { handleFilterForm } from "./modules/FilterForm/helpers/helpers";
+import { handleChangeSelect, handleFilterForm } from "./helpers/helpers";
 import SelectStatus from "./modules/SelectStatus";
-import { handleChangeSelect } from "./modules/SelectStatus/helpers/helpers";
 
 import styles from "./styles.module.css";
 

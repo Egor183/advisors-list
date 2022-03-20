@@ -1,4 +1,4 @@
-export enum SELECT_VALUES {
+export enum SELECTED_VALUES {
   MORE = "more",
   LESS = "less",
 }

@@ -1,4 +1,5 @@
-import { AdvisorsListType } from "../../../../../../../types/advisors.types";
+import { AdvisorsListType } from "../../../../../types/advisors.types";
+import { SELECTED_VALUES } from "../constants/constants";
 
 export const handleFilterForm = (
   advisorsList: AdvisorsListType,
@@ -21,4 +22,22 @@ export const handleFilterForm = (
       return item.status === status && hasDesiredLanguage;
     }
   });
+};
+
+export const handleChangeSelect = (
+  advisorsList: AdvisorsListType,
+  selectedValue: string
+) => {
+  switch (selectedValue) {
+    case SELECTED_VALUES.MORE: {
+      return [...advisorsList.sort((a, b) => b.reviews - a.reviews)];
+    }
+
+    case SELECTED_VALUES.LESS: {
+      return [...advisorsList.sort((a, b) => a.reviews - b.reviews)];
+    }
+
+    default:
+      return advisorsList;
+  }
 };
