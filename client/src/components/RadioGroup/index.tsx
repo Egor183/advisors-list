@@ -1,24 +1,30 @@
-import { RadioGroup, FormControl, FormLabel } from "@mui/material";
-import React, { memo, useCallback } from "react";
-import { RadioGroupType } from "../../types/radioGroup.types";
+import {
+  RadioGroup,
+  FormControl,
+  FormLabel,
+  RadioGroupProps,
+  FormControlLabelProps,
+} from "@mui/material";
+import React, { memo, useEffect, useState } from "react";
+import { WrappedFieldProps } from "redux-form";
 
-const RadioGroupComponent: React.FC<RadioGroupType> = ({
-  input,
-  label,
-  id,
-  ...rest
-}) => {
-  const handleChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>, currentValue: string) => {
-      return input.onChange(currentValue);
-    },
-    []
-  );
+const RadioGroupComponent: React.FC<
+  WrappedFieldProps & RadioGroupProps & FormControlLabelProps
+> = ({ input, label, id, ...rest }) => {
+  const [value, setValue] = useState(input.value);
+
+  useEffect(() => {
+    input.onChange(value);
+  }, [value, input]);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
 
   return (
     <FormControl>
       <FormLabel id={id}>{label}</FormLabel>
-      <RadioGroup {...input} {...rest} onChange={handleChange} />
+      <RadioGroup {...input} {...rest} onChange={handleChange} value={value} />
     </FormControl>
   );
 };

@@ -4,24 +4,31 @@ import { changeCurrentAdvisorsList } from "../../../../../redux/actions/advisors
 import { ChangeAdvisorsListFunctionType } from "../../../../../types/advisors.types";
 
 export const useChangeCurrentAdvisorsList = (
-  callback: ChangeAdvisorsListFunctionType
+  callback: ChangeAdvisorsListFunctionType,
+  isDefaultListUsed = true
 ) => {
   const dispatch = useDispatch();
   const defaultAdvisorsList = useSelector(
     (state: RootStateOrAny) => state.advisors.advisorsList
   );
 
+  const currentAdvisorsList = useSelector(
+    (state: RootStateOrAny) => state.advisors.currentAdvisorsList
+  );
+
+  const currentList = isDefaultListUsed
+    ? defaultAdvisorsList
+    : currentAdvisorsList;
+
   const handleChangeCurrentAdvisorsList = useCallback(
-    (changingValue: string) => {
-      if (!defaultAdvisorsList.length || !changingValue) {
+    (changingValue: any) => {
+      if (!currentList.length || !changingValue) {
         return;
       }
 
-      dispatch(
-        changeCurrentAdvisorsList(callback(defaultAdvisorsList, changingValue))
-      );
+      dispatch(changeCurrentAdvisorsList(callback(currentList, changingValue)));
     },
-    [defaultAdvisorsList, callback, dispatch]
+    [currentList, callback, dispatch]
   );
 
   return handleChangeCurrentAdvisorsList;

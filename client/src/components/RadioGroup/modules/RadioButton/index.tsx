@@ -1,9 +1,12 @@
 import React, { memo } from "react";
-import { FormControlLabel, Radio } from "@mui/material";
-import { RadioButtonType } from "../../../../types/radioGroup.types";
+import { FormControlLabel, FormControlLabelProps } from "@mui/material";
 
-const RadioButton: React.FC<RadioButtonType> = ({ value, label }) => {
-  return <FormControlLabel value={value} control={<Radio />} label={label} />;
+const RadioButton: React.FC<FormControlLabelProps> = ({
+  value,
+  label,
+  control,
+}) => {
+  return <FormControlLabel value={value} control={control} label={label} />;
 };
 
 export default memo(RadioButton);

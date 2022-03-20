@@ -2,8 +2,10 @@ import { ReactNode } from "react";
 
 export type SelectType = {
   children: ReactNode;
-  label: string;
-  id: string;
   labelId: string;
+  onChangeSelect: (changingValue: string) => void;
+};
+
+export type SelectStatusType = {
   onChange: (changingValue: string) => void;
 };

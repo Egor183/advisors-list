@@ -1,6 +1,11 @@
-import React, { memo } from "react";
+import React, { memo, ReactNode } from "react";
 import { FormControl, FormGroup, FormLabel } from "@mui/material";
-import { CheckBoxGroupType } from "../../types/checkBox.types";
+
+type CheckBoxGroupType = {
+  children: ReactNode[];
+  label: string;
+  id: string;
+};
 
 const CheckBoxGroup: React.FC<CheckBoxGroupType> = ({
   children,

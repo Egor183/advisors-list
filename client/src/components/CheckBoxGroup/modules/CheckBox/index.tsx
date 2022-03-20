@@ -1,11 +1,30 @@
-import React, { memo } from "react";
-import { Checkbox, FormControlLabel } from "@mui/material";
-import { CheckBoxType } from "../../../../types/checkBox.types";
+import React, { memo, useEffect, useState } from "react";
+import {
+  Checkbox,
+  CheckboxProps,
+  FormControlLabel,
+  FormControlLabelProps,
+} from "@mui/material";
+import { WrappedFieldProps } from "redux-form";
 
-const CheckBox: React.FC<CheckBoxType> = ({ input, name, label }) => {
+const CheckBox: React.FC<
+  WrappedFieldProps & CheckboxProps & FormControlLabelProps
+> = ({ input, label }) => {
+  const [isChecked, setIsChecked] = useState(input.checked);
+
+  useEffect(() => {
+    input.onChange(isChecked);
+  }, [isChecked, input]);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(event.target.checked);
+  };
+
   return (
     <FormControlLabel
-      control={<Checkbox name={name} onChange={input.onChange} />}
+      control={
+        <Checkbox {...input} onChange={handleChange} checked={isChecked} />
+      }
       label={label}
     />
   );
