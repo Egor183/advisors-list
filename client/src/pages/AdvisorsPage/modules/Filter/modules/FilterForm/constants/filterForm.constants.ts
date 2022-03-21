@@ -1,7 +1,9 @@
+import { STATUS_VALUES } from "../../../constants/filter.constants";
+
 export const RADIO_BUTTON_ITEMS = [
-  { value: "both", label: "Both", key: 0 },
-  { value: "online", label: "Online", key: 1 },
-  { value: "offline", label: "Offline", key: 2 },
+  { value: STATUS_VALUES.BOTH, label: "Both", key: 0 },
+  { value: STATUS_VALUES.ONLINE, label: "Online", key: 1 },
+  { value: STATUS_VALUES.OFFLINE, label: "Offline", key: 2 },
 ];
 
 export const CHECKBOX_ITEMS = [

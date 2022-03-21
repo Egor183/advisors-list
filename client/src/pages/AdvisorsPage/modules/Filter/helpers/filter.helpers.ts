@@ -1,13 +1,20 @@
 import { AdvisorsListType } from "types/advisors.types";
-import { SELECTED_VALUES } from "../constants/filter.constants";
+import { SELECTED_VALUES, STATUS_VALUES } from "../constants/filter.constants";
+
+type FILTER_CHANGING_VALUE_TYPE = {
+  status: string;
+  languages: {
+    [key: string]: boolean;
+  };
+};
 
 export const handleFilterForm = (
   advisorsList: AdvisorsListType,
-  selectedValue: any
+  selectedValue: FILTER_CHANGING_VALUE_TYPE
 ) => {
   const { status, languages } = selectedValue;
   const isLanguageChecked = Object.values(languages).includes(true);
-  const isStatusBoth = status === "both";
+  const isStatusBoth = status === STATUS_VALUES.BOTH;
 
   return advisorsList.filter((item) => {
     const hasDesiredLanguage = !!item.languages.find(

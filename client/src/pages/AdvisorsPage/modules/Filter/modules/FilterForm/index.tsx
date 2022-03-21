@@ -11,6 +11,7 @@ import {
   CHECKBOX_ITEMS,
   RADIO_BUTTON_ITEMS,
 } from "./constants/filterForm.constants";
+import { STATUS_VALUES } from "../../constants/filter.constants";
 
 import styles from "./styles.module.css";
 
@@ -24,7 +25,7 @@ const FilterForm: React.FC<InjectedFormProps> = ({ handleSubmit }) => {
           type="radio"
           label="Status"
           id={FORMS_IDS.ID_0}
-          value="both"
+          value={STATUS_VALUES.BOTH}
         >
           {RADIO_BUTTON_ITEMS.map((item) => (
             <RadioButton
@@ -65,6 +66,5 @@ const FilterForm: React.FC<InjectedFormProps> = ({ handleSubmit }) => {
 };
 
 export default reduxForm({
-  onSubmit: () => null,
   form: "FilterForm",
 })(FilterForm);

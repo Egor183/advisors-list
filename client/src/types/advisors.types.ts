@@ -11,5 +11,5 @@ export type AdvisorsListType = AdvisorDataType[];
 
 export type ChangeAdvisorsListFunctionType = (
   advisorsList: AdvisorsListType,
-  changingValue: string
+  selectedValue: any
 ) => AdvisorsListType;
