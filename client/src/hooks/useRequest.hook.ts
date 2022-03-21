@@ -1,7 +1,7 @@
-import { API_METHODS } from "../constants/api.constants";
 import { useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { setLoading } from "../redux/actions/loading.actions";
+import { API_METHODS } from "constants/api.constants";
+import { setLoading } from "redux/actions/loading.actions";
 
 export const useRequest = () => {
   const [error, setError] = useState(null);

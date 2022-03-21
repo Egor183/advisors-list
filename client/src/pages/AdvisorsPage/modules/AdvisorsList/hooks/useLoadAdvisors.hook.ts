@@ -1,9 +1,9 @@
-import { loadAdvisors } from "../../../../../redux/actions/advisors.actions";
-import { API_ROUTES } from "../../../../../constants/api.constants";
 import { useCallback, useEffect } from "react";
 import { RootStateOrAny, useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { useRequest } from "../../../../../hooks/useRequest.hook";
+import { loadAdvisors } from "redux/actions/advisors.actions";
+import { API_ROUTES } from "constants/api.constants";
+import { useRequest } from "hooks/useRequest.hook";
 
 export const useLoadAdvisors = () => {
   const { request } = useRequest();

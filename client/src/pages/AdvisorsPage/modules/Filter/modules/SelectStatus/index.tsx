@@ -1,8 +1,8 @@
 import { MenuItem } from "@mui/material";
 import React, { memo } from "react";
-import SelectComponent from "../../../../../../components/Select";
-import { FORMS_IDS } from "../../../../../../constants/forms.constants";
-import { SelectStatusType } from "../../../../../../types/select.types";
+import SelectComponent from "components/Select";
+import { FORMS_IDS } from "constants/forms.constants";
+import { SelectStatusType } from "types/select.types";
 import { MENU_ITEMS } from "./constants/constants";
 
 const SelectStatus: React.FC<SelectStatusType> = ({ onChange }) => {

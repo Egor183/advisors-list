@@ -1,9 +1,9 @@
 import React, { memo } from "react";
+import { AdvisorDataType } from "types/advisors.types";
+import logo from "assets/loader.gif";
 import Advisor from "./modules/Advisor";
-import logo from "src/assets/loader.gif";
 import { useLoadAdvisors } from "./hooks/useLoadAdvisors.hook";
 import { useHandleScroll } from "./hooks/useHandleScroll.hook";
-import { AdvisorDataType } from "../../../../types/advisors.types";
 
 import styles from "./styles.module.css";
 

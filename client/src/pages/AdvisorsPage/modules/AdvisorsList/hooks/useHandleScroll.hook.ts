@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
-import { resetScroll } from "./../../../../../redux/actions/scroll.actions";
-import { AdvisorsListType } from "../../../../../types/advisors.types";
+import { resetScroll } from "redux/actions/scroll.actions";
+import { AdvisorsListType } from "types/advisors.types";
 
 export const useHandleScroll = (
   advisors: AdvisorsListType,

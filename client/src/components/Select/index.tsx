@@ -7,7 +7,7 @@ import {
   InputLabel,
   SelectChangeEvent,
 } from "@mui/material";
-import { SelectType } from "../../types/select.types";
+import { SelectType } from "types/select.types";
 
 const SelectComponent: React.FC<
   FormControlProps & SelectType & SelectProps

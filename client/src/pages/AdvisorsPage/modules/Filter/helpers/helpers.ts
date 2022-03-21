@@ -1,4 +1,4 @@
-import { AdvisorsListType } from "../../../../../types/advisors.types";
+import { AdvisorsListType } from "types/advisors.types";
 import { SELECTED_VALUES } from "../constants/constants";
 
 export const handleFilterForm = (

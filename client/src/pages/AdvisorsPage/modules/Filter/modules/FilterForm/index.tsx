@@ -1,15 +1,15 @@
-import { Button, Radio } from "@mui/material";
-import FilterAltRoundedIcon from "@mui/icons-material/FilterAltRounded";
 import React from "react";
 import { Field, FormSection, InjectedFormProps, reduxForm } from "redux-form";
+import { Button, Radio } from "@mui/material";
+import FilterAltRoundedIcon from "@mui/icons-material/FilterAltRounded";
+import RadioGroup from "components/RadioGroup";
+import RadioButton from "components/RadioGroup/modules/RadioButton";
+import CheckBoxGroup from "components/CheckBoxGroup";
+import CheckBox from "components/CheckBoxGroup/modules/CheckBox";
+import { FORMS_IDS } from "constants/forms.constants";
 import { CHECKBOX_ITEMS, RADIO_BUTTON_ITEMS } from "./constants/constants";
-import RadioGroup from "../../../../../../components/RadioGroup";
-import RadioButton from "../../../../../../components/RadioGroup/modules/RadioButton";
-import CheckBoxGroup from "../../../../../../components/CheckBoxGroup";
-import CheckBox from "../../../../../../components/CheckBoxGroup/modules/CheckBox";
 
 import styles from "./styles.module.css";
-import { FORMS_IDS } from "../../../../../../constants/forms.constants";
 
 const FilterForm: React.FC<InjectedFormProps> = ({ handleSubmit }) => {
   return (

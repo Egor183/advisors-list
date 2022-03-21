@@ -1,9 +1,9 @@
-import { GetAdvisorsActionType } from "./../../types/redux.types";
+import { AdvisorsListType } from "types/advisors.types";
+import { GetAdvisorsActionType } from "types/redux.types";
 import {
   CHANGE_CURRENT_ADVISORS_LIST,
   LOAD_ADVISORS,
 } from "../action-types/advisors.action-types";
-import { AdvisorsListType } from "types/advisors.types";
 
 const initialState: {
   advisorsList: AdvisorsListType | never[];

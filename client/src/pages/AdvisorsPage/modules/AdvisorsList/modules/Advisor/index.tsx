@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React, { memo } from "react";
-import { AdvisorDataType } from "../../../../../../types/advisors.types";
+import { AdvisorDataType } from "types/advisors.types";
 
 import styles from "./styles.module.css";
 

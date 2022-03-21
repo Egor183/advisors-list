@@ -1,5 +1,5 @@
+import { ResetScrollActionType } from "types/redux.types";
 import { RESET_SCROLL } from "../action-types/scroll.action-types";
-import { ResetScrollActionType } from "../../types/redux.types";
 
 const initialState = {
   resetScroll: false,
