@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Main technologies
 
-Backend: Node.js, Express, nodemon, concurrently, Typescript
+Back-end: Node.js, Express, nodemon, concurrently, Typescript
 Front-end: React, Redux, react-redux, redux-form, Typescript
 
 ## How launch
