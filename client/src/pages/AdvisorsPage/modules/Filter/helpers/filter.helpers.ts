@@ -1,5 +1,5 @@
 import { AdvisorsListType } from "types/advisors.types";
-import { SELECTED_VALUES } from "../constants/constants";
+import { SELECTED_VALUES } from "../constants/filter.constants";
 
 export const handleFilterForm = (
   advisorsList: AdvisorsListType,

@@ -1,5 +1,5 @@
 import { loadAdvisors } from "redux/actions/advisors.actions";
-import { advisorsReducer } from "redux/reducers/advisors.reducers";
+import { advisorsReducer } from "redux/reducers/advisors.reducer";
 
 const state = {
   advisorsList: [],

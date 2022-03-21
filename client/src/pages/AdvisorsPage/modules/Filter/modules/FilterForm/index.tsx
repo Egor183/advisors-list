@@ -7,7 +7,10 @@ import RadioButton from "components/RadioGroup/modules/RadioButton";
 import CheckBoxGroup from "components/CheckBoxGroup";
 import CheckBox from "components/CheckBoxGroup/modules/CheckBox";
 import { FORMS_IDS } from "constants/forms.constants";
-import { CHECKBOX_ITEMS, RADIO_BUTTON_ITEMS } from "./constants/constants";
+import {
+  CHECKBOX_ITEMS,
+  RADIO_BUTTON_ITEMS,
+} from "./constants/filterForm.constants";
 
 import styles from "./styles.module.css";
 

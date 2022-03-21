@@ -3,7 +3,7 @@ import React, { memo } from "react";
 import SelectComponent from "components/Select";
 import { FORMS_IDS } from "constants/forms.constants";
 import { SelectStatusType } from "types/select.types";
-import { MENU_ITEMS } from "./constants/constants";
+import { MENU_ITEMS } from "./constants/selectStatus.constants";
 
 const SelectStatus: React.FC<SelectStatusType> = ({ onChange }) => {
   return (

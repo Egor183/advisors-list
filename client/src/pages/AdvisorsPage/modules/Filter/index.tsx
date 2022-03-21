@@ -1,9 +1,9 @@
 import React, { memo } from "react";
 import { RootStateOrAny, useSelector } from "react-redux";
-import { useChangeCurrentAdvisorsList } from "./hooks/useChangeCurrentAdvisorsList";
+import { useChangeCurrentAdvisorsList } from "./hooks/useChangeCurrentAdvisorsList.hook";
 import FilterForm from "./modules/FilterForm";
-import { handleChangeSelect, handleFilterForm } from "./helpers/helpers";
 import SelectStatus from "./modules/SelectStatus";
+import { handleChangeSelect, handleFilterForm } from "./helpers/filter.helpers";
 
 import styles from "./styles.module.css";
 
