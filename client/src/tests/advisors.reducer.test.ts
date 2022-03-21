@@ -6,7 +6,7 @@ const state = {
   currentAdvisorsList: [],
 };
 
-test("length of advisorsList should be incremented ", () => {
+it("length of advisorsList should be incremented ", () => {
   const action = loadAdvisors([
     {
       id: "2",
