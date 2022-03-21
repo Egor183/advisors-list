@@ -6,7 +6,7 @@ import { API_ROUTES } from "constants/api.constants";
 import { useRequest } from "hooks/useRequest.hook";
 
 export const useLoadAdvisors = () => {
-  const { request } = useRequest();
+  const request = useRequest();
   const dispatch = useDispatch();
   const advisors = useSelector(
     (state: RootStateOrAny) => state.advisors.currentAdvisorsList

@@ -9,3 +9,5 @@ export type GetAdvisorsActionType = BasicActionType<AdvisorsListType>;
 export type SetLoadingActionType = BasicActionType<boolean>;
 
 export type ResetScrollActionType = BasicActionType<boolean>;
+
+export type SetErrorActionType = BasicActionType<boolean>;

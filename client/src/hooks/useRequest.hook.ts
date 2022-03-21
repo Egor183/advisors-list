@@ -1,10 +1,10 @@
-import { useState, useCallback } from "react";
+import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { API_METHODS } from "constants/api.constants";
 import { setLoading } from "redux/actions/loading.actions";
+import { setError } from "redux/actions/loading.actions copy";
 
 export const useRequest = () => {
-  const [error, setError] = useState(null);
   const dispatch = useDispatch();
 
   const request = useCallback(
@@ -14,13 +14,9 @@ export const useRequest = () => {
         const response = await fetch(url, { method });
         const data = await response.json();
 
-        if (!response.ok) {
-          throw new Error(data.message || "Something went wrong");
-        }
-
         return data;
       } catch (e: any) {
-        setError(e.message);
+        dispatch(setError(true));
         throw e;
       } finally {
         dispatch(setLoading(false));
@@ -29,7 +25,5 @@ export const useRequest = () => {
     [dispatch]
   );
 
-  const clearError = useCallback(() => setError(null), []);
-
-  return { request, error, clearError };
+  return request;
 };
