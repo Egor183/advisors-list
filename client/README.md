@@ -7,6 +7,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Backend: Node.js, Express, nodemon, concurrently, Typescript
 Front-end: React, Redux, react-redux, redux-form, Typescript
 
+## How launch
+
+1. git clone
+2. cmd:yarn in ./advisors-list
+3. cmd:yarn in ./advisors-list/client
+4. cmd:yarn dev in ./advisors-list
+
 ## Available Scripts
 
 In the project directory, you can run:
