@@ -22,7 +22,7 @@ In the project directory, you can run:
 
 Runs the app (back-end and front-end) in the development mode.\
 Front-end open on [http://localhost:3000] to view it in the browser.
-Back-end open on ["http://localhost:5000].
+Back-end open on [http://localhost:5000].
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.

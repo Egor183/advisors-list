@@ -1,5 +1,5 @@
 import { errorReducer } from "./../redux/reducers/error.reducer";
-import { setError } from "./../redux/actions/loading.actions copy";
+import { setError } from "../redux/actions/error.actions";
 
 const state = {
   hasError: false,

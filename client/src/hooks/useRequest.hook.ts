@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { API_METHODS } from "constants/api.constants";
 import { setLoading } from "redux/actions/loading.actions";
-import { setError } from "redux/actions/loading.actions copy";
+import { setError } from "redux/actions/error.actions";
 
 export const useRequest = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,6 @@ export const useRequest = () => {
         return data;
       } catch (e: any) {
         dispatch(setError(true));
-        throw e;
       } finally {
         dispatch(setLoading(false));
       }
